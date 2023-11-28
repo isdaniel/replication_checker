@@ -1,12 +1,12 @@
 FROM dog830228/replica-pg:0.3
 
-COPY *.cpp /replication_checker/*.cpp
-COPY *.h /replication_checker/*.h
+COPY *.cpp /replication_checker/
+COPY *.h /replication_checker/
 
-RUN cd /replication_checker \ 
-    cd build \
-    cmake .. \
-    cmake --build .
+WORKDIR /replication_checker/build
+
+RUN cmake .. 
+RUN cmake --build .
 
 # RUN apt-get update
 # RUN apt install libssl-dev -y \
