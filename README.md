@@ -52,7 +52,16 @@ Then, in replication_checker we could have:
 
 ## docker run
 
-docker run --name pg-replica-checker -e PubName=pub -e SlotName=sub -it dog830228/replica-pg:0.3 /replication_checker/build/replication_checker user postgres replication database host localhost dbname postgres password test.123
+```
+docker run --name pg-replica-checker -e PubName=pub -e SlotName=sub -it dog830228/replica-pg:0.2 /replication_checker/build/replication_checker user postgres replication database host localhost dbname postgres password test.123
+```
+
+or newer version of  `dog830228/replica-pg` container image.
+
+```
+docker run -e PubName=pub -e SlotName=sub -it dog830228/replica-pg:0.5  user postgres replication database host localhost dbname postgres password test.123
+```
+
 
 
 
